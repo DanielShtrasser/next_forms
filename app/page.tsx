@@ -3,7 +3,7 @@ import postgres from "postgres";
 import { AddForm } from "@/app/add-form";
 import { DeleteForm } from "@/app/delete-form";
 
-let sql = postgres("postgres://default:RSDtGaCez67U@ep-crimson-sunset-a42qb19p-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require", {
+let sql = postgres(process.env.DATABASE_URL || process.env.POSTGRES_URL!, {
   ssl: "allow",
 });
 
